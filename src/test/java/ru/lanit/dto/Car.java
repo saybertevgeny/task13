@@ -1,4 +1,4 @@
-package ru.lanit.integration.request;
+package ru.lanit.dto;
 
 public class Car {
 

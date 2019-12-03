@@ -1,4 +1,4 @@
-package ru.lanit.integration;
+package ru.lanit.integration.mock;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;

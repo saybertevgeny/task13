@@ -1,7 +1,7 @@
 package ru.lanit.validator;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import ru.lanit.Exception.NoEntityException;
+import ru.lanit.exception.NoEntityException;
 import ru.lanit.constraint.PersonAgeConstraint;
 import ru.lanit.entity.Person;
 import ru.lanit.repository.PersonRepositoryInterface;

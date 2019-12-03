@@ -1,4 +1,4 @@
-package ru.lanit.integration;
+package ru.lanit.integration.mock;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

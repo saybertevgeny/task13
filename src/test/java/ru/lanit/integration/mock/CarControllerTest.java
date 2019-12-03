@@ -1,4 +1,4 @@
-package ru.lanit.integration;
+package ru.lanit.integration.mock;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
@@ -10,7 +10,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import ru.lanit.integration.request.Car;
+import ru.lanit.dto.Car;
 import ru.lanit.entity.Person;
 import ru.lanit.repository.CarRepositoryInterface;
 import ru.lanit.repository.PersonRepositoryInterface;

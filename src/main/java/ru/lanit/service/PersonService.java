@@ -3,7 +3,7 @@ package ru.lanit.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import ru.lanit.Exception.NoEntityException;
+import ru.lanit.exception.NoEntityException;
 import ru.lanit.dto.CarDto;
 import ru.lanit.dto.PersonDto;
 import ru.lanit.entity.Car;

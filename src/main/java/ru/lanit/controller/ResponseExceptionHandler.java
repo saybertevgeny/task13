@@ -1,4 +1,4 @@
-package ru.lanit;
+package ru.lanit.controller;
 
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.http.HttpHeaders;

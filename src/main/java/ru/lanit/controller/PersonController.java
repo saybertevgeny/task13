@@ -1,9 +1,9 @@
-package ru.lanit;
+package ru.lanit.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.lanit.Exception.NoEntityException;
+import ru.lanit.exception.NoEntityException;
 import ru.lanit.constraint.EntityState;
 import ru.lanit.constraint.PersonStateConstraint;
 import ru.lanit.service.PersonService;

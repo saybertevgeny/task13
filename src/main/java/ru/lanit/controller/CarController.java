@@ -1,4 +1,4 @@
-package ru.lanit;
+package ru.lanit.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

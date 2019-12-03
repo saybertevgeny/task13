@@ -15,9 +15,10 @@ import ru.lanit.dto.Person;
 
 import java.time.LocalDate;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -46,6 +47,13 @@ public class RestControllerTest {
         mockMvc.perform(post("/car").content(mapper.writeValueAsString(carRequest)).contentType(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk());
+
+        mockMvc.perform(get("/personwithcars").param("personid", "1"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id").value(1))
+                .andExpect(jsonPath("$.cars[0].id").value(1))
+                .andExpect(jsonPath("$.cars[1].id").value(2));
     }
 
     @Test
@@ -59,6 +67,12 @@ public class RestControllerTest {
         mockMvc.perform(post("/car").content(mapper.writeValueAsString(carRequest)).contentType(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isBadRequest());
+
+        mockMvc.perform(get("/personwithcars").param("personid", "2"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id").value(2))
+                .andExpect(jsonPath("$.cars").isEmpty());
     }
 
     @Test
@@ -67,6 +81,10 @@ public class RestControllerTest {
         mockMvc.perform(post("/person").content(mapper.writeValueAsString(requestPerson)).contentType(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isBadRequest());
+
+        mockMvc.perform(get("/personwithcars").param("personid", "3"))
+                .andDo(print())
+                .andExpect(status().isNotFound());
     }
 
     @Test
@@ -80,5 +98,12 @@ public class RestControllerTest {
         mockMvc.perform(post("/car").content(mapper.writeValueAsString(carRequest)).contentType(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isBadRequest());
+
+        mockMvc.perform(get("/personwithcars").param("personid", "4"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id").value(4))
+                .andExpect(jsonPath("$.cars").isEmpty());
+
     }
 }

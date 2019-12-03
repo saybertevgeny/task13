@@ -7,6 +7,7 @@ import ru.lanit.constraint.EntityState;
 import ru.lanit.constraint.PersonStateConstraint;
 import ru.lanit.dto.CarModel;
 import ru.lanit.dto.desirializer.CarModelDeserialize;
+
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -29,6 +30,16 @@ public class Car {
     @PersonStateConstraint(existence = EntityState.EXIST)
     @PersonAgeConstraint(minAge = 18)
     private long ownerId;
+
+    public Car() {
+    }
+
+    public Car(@NotNull long id, @NotNull CarModel model, @NotNull @Min(1) int horsepower, @NotNull long ownerId) {
+        this.id = id;
+        this.model = model;
+        this.horsepower = horsepower;
+        this.ownerId = ownerId;
+    }
 
     public long getId() {
         return id;

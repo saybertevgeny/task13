@@ -28,6 +28,15 @@ public class Person {
     @JsonSerialize(using = LocalDateSerializer.class)
     private LocalDate birthdate;
 
+    public Person() {
+    }
+
+    public Person(@NotNull long id, @NotNull String name, @NotNull @Past LocalDate birthdate) {
+        this.id = id;
+        this.name = name;
+        this.birthdate = birthdate;
+    }
+
     public long getId() {
         return id;
     }

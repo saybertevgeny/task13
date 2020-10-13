@@ -19,7 +19,7 @@
         <jaxb.version>2.3.0</jaxb.version>
         <jsp-api.version>2.0</jsp-api.version>
         <spring.boot.version>2.1.9.RELEASE</spring.boot.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <mockito.version>1.9.5</mockito.version>
     </properties>
 
